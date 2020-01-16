@@ -1,0 +1,11 @@
+.align-left{
+    float: left;
+}
+
+:host ::ng-deep .align-right{
+    float: right !important;
+}
+
+.row{
+    align-items: center;
+}

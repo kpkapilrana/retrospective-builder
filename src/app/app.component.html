@@ -1,0 +1,59 @@
+<mat-toolbar color="primary">Retrospective Builder</mat-toolbar>
+<!-- <router-outlet></router-outlet> -->
+<div class="container">
+  <div class="row">
+    <mat-card class="col-md-6 col-sm-12 right bottom">
+      <app-form-field [field]="fields[0]"  (onButtonClick)="onButtonClicked($event)"></app-form-field>
+      <mat-chip-list class="row">
+        <span *ngFor="let item of whatWellWent;  let i = index" class="col-md-4">
+            <mat-chip  (removed)="removeChip(item, 0)" color="primary" color="primary">
+                    {{item.name}}
+                <mat-icon matChipRemove>cancel</mat-icon>
+            </mat-chip>
+        </span>
+    </mat-chip-list>
+    </mat-card>
+    <mat-card class="col-md-6 col-sm-12 bottom">
+      <app-form-field [field]="fields[1]" (onButtonClick)="onButtonClicked($event)"></app-form-field>
+      <mat-chip-list class="row">
+        <span *ngFor="let item of opportunityToImprove;  let i = index" class="col-md-4">
+            <mat-chip  (removed)="removeChip(item, 1)" color="primary">
+                    {{item.name}}
+                <mat-icon matChipRemove>cancel</mat-icon>
+            </mat-chip>
+        </span>
+    </mat-chip-list>
+    </mat-card>
+  </div>
+
+  <div class="row">
+    <mat-card class="col-md-6 col-sm-12 right">
+      <app-form-field [field]="fields[2]" (onButtonClick)="onButtonClicked($event)"></app-form-field>
+      <mat-chip-list class="row">
+        <span *ngFor="let item of questions;  let i = index" class="col-md-4">
+            <mat-chip  (removed)="removeChip(item, 2)" color="primary">
+                    {{item.name}}
+                <mat-icon matChipRemove>cancel</mat-icon>
+            </mat-chip>
+        </span>
+    </mat-chip-list>
+    </mat-card>
+    <mat-card class="col-md-6 col-sm-12">
+      <app-form-field [field]="fields[3]" (onButtonClick)="onButtonClicked($event)"></app-form-field>
+      <mat-chip-list class="row">
+        <span *ngFor="let item of suggestions;  let i = index" class="col-md-4">
+            <mat-chip  (removed)="removeChip(item, 3)" color="primary">
+                    {{item.name}}
+                <mat-icon matChipRemove>cancel</mat-icon>
+            </mat-chip>
+        </span>
+    </mat-chip-list>
+    </mat-card>
+  </div>
+  <div class="button-container">
+      <button  mat-flat-button
+        color="primary" [disabled]="disableButton()" (click)="submit()">
+        Submit
+      </button>
+  </div>
+</div>

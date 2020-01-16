@@ -1,0 +1,20 @@
+<div class="row">
+    <mat-toolbar>
+        <span>{{ field.placeholder }}</span>
+      </mat-toolbar>
+    <div class="col md-8">
+        <mat-form-field>
+            <input matInput placeholder="{{ field.placeholder }}" [formControl]="formControl">
+            <mat-error *ngIf="formControl.invalid">
+                Please Enter value
+            </mat-error>
+          </mat-form-field>
+    </div>
+    <div class="col md-2 align-right">
+        <button mat-mini-fab color="primary" [disabled]="formControl.invalid" (click)="onButtonClicked()">
+            <mat-icon>control_point</mat-icon>
+        </button>
+    </div>
+</div>
+
+  

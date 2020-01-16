@@ -1,0 +1,40 @@
+.container{
+    padding: 10px;
+}
+
+.left{
+        border-left: 1px solid gray;
+}
+
+.right{
+    border-right: 1px solid gray;
+}
+
+.bottom{
+    border-bottom: 1px solid gray;
+}
+
+// ::ng-deep .col-md-6{
+//     padding: 10px;
+// }
+
+.button-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin-top: 12px;
+    // justify-content: space-evenly;
+    // position: absolute;
+    // bottom: 5vh;
+    // left: 50%;
+    // margin: auto;
+    // transform: translate(-50%, -50%);
+  
+    >button {
+      margin-right: 10px;
+    }
+  
+    >.lastButton {
+      margin-right: 0;
+    }
+  }
